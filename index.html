@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Drink Delta · The Sampler Pack</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+<style>
+  * { font-family: 'Manrope', sans-serif !important; }
+</style>
+
+<style>
+  @media (max-width: 768px) {
+    /* Nav */
+    nav img { height: 24px !important; }
+    nav .d-flex.gap-4 { gap: 6px !important; font-size: 9px !important; }
+    nav .d-flex.gap-4 a[href="#ingredients-section"] { display: none !important; }
+    nav .d-flex.gap-4 a[style*="padding"] { padding: 6px 12px !important; font-size: 9px !important; }
+    nav .container { padding: 0 10px !important; }
+    
+    /* Announcement bar in nav */
+    nav > div:last-child p { font-size: 10px !important; letter-spacing: 0.5px !important; }
+    
+    /* Product section */
+    .product-wrap { padding-top: 10px !important; }
+    .product_title { font-size: 24px !important; }
+    .product_price { font-size: 20px !important; }
+    
+    /* Flavor pills */
+    .mc-flavor-pill { padding: 6px 12px !important; }
+    .mc-flavor-pill .mc-flavor-label { font-size: 11px !important; }
+    .mc-flavor-pill .mc-can-img { width: 22px !important; height: 22px !important; }
+    .mc-flavor-wrap { gap: 6px !important; }
+    
+    /* Quantity pills */
+    .quantity-pill, .pill { font-size: 12px !important; padding: 8px 16px !important; }
+    
+    /* Review in product area */
+    .rating-info { display: none !important; }
+    
+    /* Thumbs */
+    .thumb-col { display: none !important; }
+    
+    /* General sections */
+    section h2 { font-size: 22px !important; }
+    section h3 { font-size: 18px !important; }
+    
+    /* Comparison table */
+    table th, table td { padding: 10px 6px !important; font-size: 10px !important; }
+    
+    /* Footer */
+    footer { padding: 30px 0 15px !important; }
+  }
+  
+  @media (max-width: 480px) {
+    nav img { height: 20px !important; }
+    nav .d-flex.gap-4 a[href="#flavors-section"] { display: none !important; }
+    .mc-flavor-wrap { gap: 4px !important; }
+    .mc-flavor-pill { padding: 5px 10px !important; }
+    .mc-flavor-pill .mc-flavor-label { font-size: 10px !important; }
+    .mc-flavor-pill .mc-can-img { width: 18px !important; height: 18px !important; }
+  }
+</style>
+
+
+<style>
+@media (max-width: 768px) {
+  .mc-magic-grid { flex-direction: column !important; }
+}
+</style>
+
+    <!-- Meta Pixel -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1368821764893907');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1368821764893907&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17926076041"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17926076041');
+    </script>
+    <!-- End Google tag -->
+
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-31GXD24HNL"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-31GXD24HNL');
+    </script>
+    <!-- End Google Analytics GA4 -->
+</head>
+
+<body>
+
+  <nav style="position:fixed; left:0; right:0; top:0; z-index:1000; background:#fff; border-bottom:1px solid #eee; box-shadow:0 1px 3px rgba(0,0,0,0.04); padding:0;">
+    <div class="container d-flex align-items-center justify-content-between" style="padding-top:14px; padding-bottom:14px;">
+      <a href="#" style="text-decoration:none;">
+        <img src="assets/images/Primary_Logo_Color-DO8Uri6Y.svg" style="height:36px; width:auto;">
+      </a>
+      <div class="d-flex align-items-center gap-4" style="font-family:'Manrope',sans-serif; font-size:12px; letter-spacing:1px;">
+        <a href="#flavors-section" style="color:#2D2B5E; text-decoration:none;">FLAVORS</a>
+        <a href="#ingredients-section" style="color:#2D2B5E; text-decoration:none;">INGREDIENTS</a>
+        <a href="#reviews-section" style="color:#2D2B5E; text-decoration:none;">REVIEWS</a>
+        <a href="#faq-section" style="color:#2D2B5E; text-decoration:none;">FAQ</a>
+        <a href="#product-top" style="background:#2D2B5E; color:#fff; padding:8px 20px; border-radius:30px; text-decoration:none; font-weight:600;">SHOP NOW</a>
+      </div>
+    </div>
+  <div style="background:#2D2B5E; padding:8px 0; text-align:center;"><p style="font-family:'Manrope',sans-serif; color:#fff; font-size:12px; margin:0; letter-spacing:1.5px;">Free Shipping on orders over $50</p></div></nav>
+  <style>
+    html { scroll-behavior: smooth; }
+    nav a:hover { opacity: 0.8; }
+    @media (max-width: 576px) {
+      nav .d-flex.gap-4 { gap: 8px !important; font-size: 10px !important; }
+      nav .d-flex.gap-4 a[href="#ingredients-section"] { display: none; }
+    }
+  </style>
+
+<!-- HERO HEADLINE -->
+<div style="height:44px;"></div>
+
+  <section class="product-wrap"  id="product-top" style="visibility:hidden;">
+    <div class="container" product_id="8371013451949">
+      <div class="row g-4 align-items-start" product_id="">
+        <div class="col-lg-6">
+          <div class="products-inner-wrap d-flex gap-4">
+            <div class="thumb-col d-lg-flex">
+              <button class="thumb-btn active" data-index="0" data-src="assets/images/5mg/1.jpg">
+                <div class="thumb"><img src="assets/images/5mg/1.jpg" alt="Product thumbnail 1"></div>
+              </button>
+              <button class="thumb-btn" data-index="1" data-src="assets/images/5mg/2.jpg">
+                <div class="thumb"><img src="assets/images/5mg/2.jpg" alt="Product thumbnail 2"></div>
+              </button>
+              <button class="thumb-btn" data-index="2" data-src="assets/images/5mg/3.jpg">
+                <div class="thumb"><img src="assets/images/5mg/3.jpg" alt="Product thumbnail 3"></div>
+              </button>
+              <button class="thumb-btn" data-index="3" data-src="assets/images/5mg/4.jpg">
+                <div class="thumb"><img src="assets/images/5mg/4.jpg" alt="Product thumbnail 4"></div>
+              </button>
+              <button class="thumb-btn" data-index="4" data-src="assets/images/5mg/5.jpg">
+                <div class="thumb"><img src="assets/images/5mg/5.jpg" alt="Product thumbnail 5"></div>
+              </button>
+              <button class="thumb-btn" data-index="5" data-src="assets/images/5mg/6.jpg">
+                <div class="thumb"><img src="assets/images/5mg/6.jpg" alt="Product thumbnail 6"></div>
+              </button>
+            </div>
+            <div class="flex-grow-1">
+              <div class="main-image mb-3">
+                <img id="mainImage" src="assets/images/5mg/1.jpg" alt="Main product image">
+              </div>
+              <div class="d-flex align-items-center gap-3">
+                <div class="rating-info">
+                  <div class="rating-stars mb-1">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M12 2L14.9 8.6L22 9.3L16.8 14.1L18.2 21.1L12 17.8L5.8 21.1L7.2 14.1L2 9.3L9.1 8.6L12 2Z" />
+                    </svg>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M12 2L14.9 8.6L22 9.3L16.8 14.1L18.2 21.1L12 17.8L5.8 21.1L7.2 14.1L2 9.3L9.1 8.6L12 2Z" />
+                    </svg>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M12 2L14.9 8.6L22 9.3L16.8 14.1L18.2 21.1L12 17.8L5.8 21.1L7.2 14.1L2 9.3L9.1 8.6L12 2Z" />
+                    </svg>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M12 2L14.9 8.6L22 9.3L16.8 14.1L18.2 21.1L12 17.8L5.8 21.1L7.2 14.1L2 9.3L9.1 8.6L12 2Z" />
+                    </svg>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M12 2L14.9 8.6L22 9.3L16.8 14.1L18.2 21.1L12 17.8L5.8 21.1L7.2 14.1L2 9.3L9.1 8.6L12 2Z" />
+                    </svg>
+                  </div>
+                  <div class="fw-semibold small">MY ALL TIME FAVORITE!</div>
+                  <div class="review-card  mt-1">
+                    This is a game changer in my quest to limit alcohol and smoking! Thanks so much!
+                  </div>
+                  <div class="mt-2 fw-semibold text-center">S.M. <span class=" small d-block"><img width="20"
+                        src="assets/images/verfied.svg"> VERIFIED BUYER</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-lg-6">
+          <div class="text-uppercase fw-semibold clr-green product_title">5 Sampler Pack</div>
+          <a href="#reviews-section" class="rating-review d-flex align-items-center gap-2 mt-1" style="text-decoration:none; cursor:pointer;">
+            <div class="rating-stars" style="display:flex; align-items:center; gap:1px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L14.9 8.6L22 9.3L16.8 14.1L18.2 21.1L12 17.8L5.8 21.1L7.2 14.1L2 9.3L9.1 8.6L12 2Z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L14.9 8.6L22 9.3L16.8 14.1L18.2 21.1L12 17.8L5.8 21.1L7.2 14.1L2 9.3L9.1 8.6L12 2Z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L14.9 8.6L22 9.3L16.8 14.1L18.2 21.1L12 17.8L5.8 21.1L7.2 14.1L2 9.3L9.1 8.6L12 2Z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFC107" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L14.9 8.6L22 9.3L16.8 14.1L18.2 21.1L12 17.8L5.8 21.1L7.2 14.1L2 9.3L9.1 8.6L12 2Z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="star80"><stop offset="80%" stop-color="#FFC107"/><stop offset="80%" stop-color="#e0e0e0"/></linearGradient></defs><path fill="url(#star80)" d="M12 2L14.9 8.6L22 9.3L16.8 14.1L18.2 21.1L12 17.8L5.8 21.1L7.2 14.1L2 9.3L9.1 8.6L12 2Z"/></svg>
+            </div>
+            <span style="font-family:'Manrope',sans-serif; font-size:13px; color:#555;">4.8 &nbsp;&middot;&nbsp; 12,472 reviews</span>
+          </a>
+          <div class="small text-muted mt-1 product-description" style="font-size:13px; line-height:1.6;"></div>
+
+          <div class="fw-semibold mt-3 mb-2" style="font-size:13px; color:#2D2B5E; letter-spacing:0.5px;">STRENGTH</div>
+          <div class="d-flex gap-2 mb-3 strength-selector">
+            <button class="strength-pill active" data-strength="light" data-product-id="8371013451949" style="background:#2D2B5E; color:#fff; border:2px solid #2D2B5E; border-radius:30px; padding:8px 18px; font-family:'Manrope',sans-serif; font-size:13px; font-weight:600; cursor:pointer; transition:all 0.2s ease;">&#127811; Light</button>
+            <button class="strength-pill" data-strength="moderate" data-product-id="8449097007277" style="background:#f0f0f0; color:#333; border:2px solid #e0e0e0; border-radius:30px; padding:8px 18px; font-family:'Manrope',sans-serif; font-size:13px; font-weight:600; cursor:pointer; transition:all 0.2s ease;">&#127811;&#127811; Moderate</button>
+            <button class="strength-pill" data-strength="experience" data-product-id="8449097433261" style="background:#f0f0f0; color:#333; border:2px solid #e0e0e0; border-radius:30px; padding:8px 18px; font-family:'Manrope',sans-serif; font-size:13px; font-weight:600; cursor:pointer; transition:all 0.2s ease;">&#127811;&#127811;&#127811; Experience</button>
+          </div>
+
+          <div class="h5 mt-2 product_price">$69.96</div>
+          <div class="d-flex gap-2 mt-2 product-flavour-variation" id="flavors-section">
+          </div>
+
+          <div class="mt-3 fw-semibold">Pack Size</div>
+          <div class="d-flex gap-2 mt-1 quantity-toggle-group variant" role="radiogroup" aria-label="Pack quantity">
+            <div>
+              <input class="btn-check quantity-input" variant_price="69.96" product_id="8371013451949"
+                variation="" type="radio" name="packQuantity" id="pack-default" value="16" checked>
+              <label class="pill quantity-pill" for="pack-default" style="letter-spacing:0.1em;">16-Pack</label>
+            </div>
+          </div>
+
+          <div class="selling_plans">
+            <div class="subscribe-banner" style="background:#2D2B5E; color:#fff; text-align:center; padding:12px 14px; border-radius:10px 10px 0 0; font-family:'Manrope',sans-serif; font-weight:800; font-size:16px; letter-spacing:1.5px; margin-top:16px;">SUBSCRIBE &amp; SAVE 20%</div>
+            <div class="option-card subscription active" style="border-radius:0 0 10px 10px;">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex gap-1">
+                  <input class="form-check-input" selling_plan="3776938228" plan_price="57.60" type="radio"
+                    name="purchaseOption" value="subscribe" checked>
+                  <div class="fw-semibold sub-save-label" style="font-family:'Manrope',sans-serif;">Subscribe &amp; Save <span style="background:#C42F03; color:#fff; font-size:10px; font-weight:700; padding:2px 8px; border-radius:20px; margin-left:6px; vertical-align:middle;">20%</span></div>
+                </div>
+                <div class="text-end">
+                  <div class="price">$<span class="payable_amount">57.60</span><span class="strike">$72.00</span></div>
+                  <div class="subscribe-per-can" style="font-size:11px; color:#888;"></div>
+                </div>
+              </div>
+              <select class="form-select mt-1">
+                <option value="3776938228">Every 4 Weeks</option>
+                <option value="3776970996">Every 6 Weeks</option>
+                <option value="3776970997">Every 8 Weeks</option>
+                <option value="3776970998">Every Month</option>
+              </select>
+              <p style="font-family:'FuturaMedium','Century Gothic',sans-serif; font-weight:600; font-size:13px; margin:10px 0 6px 0; color:#333; text-transform:none;">Keep it stocked. Switch it up.</p>
+              <ul class="small text-muted mt-1 mb-0" style="padding-left:18px; font-family:'FuturaMedium','Century Gothic',sans-serif; text-transform:none;">
+                <li>Save up to 20% on repeat orders</li>
+                <li>Swap flavors whenever you want</li>
+                <li>No commitment, skip, pause or cancel anytime</li>
+              </ul>
+            </div>
+
+            <div class="mt-3 option-card one_time_purchase" style="background:#fff; border:1px solid #d0d0d0;">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex gap-1">
+                  <input class="form-check-input" selling_plan="" plan_price="69.96" type="radio" name="purchaseOption"
+                    value="one-time">
+                  <div class="fw-semibold" style="font-family:'Manrope',sans-serif;">One time purchase</div>
+                </div>
+                <div class="text-end">
+                  <div class="price"><span class="payable_amount">$69.96</span></div>
+                  <div class="price-per-can" style="font-size:11px; color:#888;">$4.37 per can</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-block">
+            <div class="hover-wrapper">
+              <a class="small clr-black hover-text" href="#">How do subscriptions work?</a>
+              <div class="hover-card">
+                <div class="item">
+                  <div class="icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+                      <!-- Back card (partially hidden) -->
+                      <rect x="3" y="6" width="13" height="9" rx="2" stroke="currentColor" stroke-width="1.7" />
+
+                      <!-- Front card -->
+                      <rect x="7" y="9" width="14" height="9" rx="2" fill="white" stroke="currentColor"
+                        stroke-width="1.7" />
+
+                      <!-- Center circle (border only) -->
+                      <circle cx="14" cy="13.5" r="1.7" fill="none" stroke="currentColor" stroke-width="1.6" />
+
+                    </svg>
+                  </div>
+                  <div>
+                    <h4>Get exclusive deals</h4>
+                    <p>Subscribe for unique discounts</p>
+                  </div>
+                </div>
+
+                <div class="item">
+                  <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px"
+                      viewBox="0 0 16 16" fill="none">
+                      <path d="M8.29289 3.70711L1 11V15H5L12.2929 7.70711L8.29289 3.70711Z" fill="#000000" />
+                      <path
+                        d="M9.70711 2.29289L13.7071 6.29289L15.1716 4.82843C15.702 4.29799 16 3.57857 16 2.82843C16 1.26633 14.7337 0 13.1716 0C12.4214 0 11.702 0.297995 11.1716 0.828428L9.70711 2.29289Z"
+                        fill="#000000" />
+                    </svg></div>
+                  <div>
+                    <h4>Edit your subscription anytime</h4>
+                    <p>Edit products, delivery schedule and more</p>
+                  </div>
+                </div>
+
+                <div class="item">
+                  <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px"
+                      viewBox="0 0 24 24" fill="none">
+                      <path d="M20 20L4 4.00003M20 4L4.00002 20" stroke="#000000" stroke-width="2"
+                        stroke-linecap="round" />
+                    </svg></div>
+                  <div>
+                    <h4>No commitment</h4>
+                    <p>Easy to cancel if it's not for you</p>
+                  </div>
+                </div>
+                <div class="hovered-popup-footer">
+                  <a href="#" class="manage-link">Manage subscriptions</a>
+                  <div class="powered">Powered by <b>Stay AI</b></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-3">
+            <button class="btn-primary w-100 add-to-cart" product_id="8371013451949" variation=""
+              type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas">
+              ADD TO CART
+            </button>
+            <div class="d-flex justify-content-between mt-2" style="font-size:11px; color:#888; font-family:'Manrope',sans-serif;">
+              <span>Must be 21+ to purchase.</span>
+              <span>Derived from hemp (&lt;0.3%)</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- WHAT MAKES US DIFFERENT -->
+<section id="ingredients-section" style="padding:70px 0; background:#fff;">
+  <div class="container">
+    <h2 class="text-center clr-green mb-2" style="font-family:'Manrope',sans-serif; font-weight:800;">What Makes Us Different</h2>
+    <p class="text-center text-muted mb-5" style="font-size:14px;">Not just another garden seltzer.</p>
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5">
+        <img src="assets/images/Copy of SM_Del Sale Ads .jpg" alt="Drink Delta lifestyle" style="width:100%; border-radius:20px;">
+      </div>
+      <div class="col-lg-7">
+        <div style="border-bottom:1px solid #eee; padding:20px 0;">
+          <div style="display:inline-block; background:#E8E7F0; color:#2D2B5E; padding:4px 14px; border-radius:20px; font-family:'Manrope',sans-serif; font-size:11px; font-weight:600; margin-bottom:10px;">Clean Ingredients</div>
+          <h4 style="font-family:'Manrope',sans-serif; color:#333; font-size:18px; margin-bottom:6px;">ZERO SUGAR. ZERO ALCOHOL. ZERO CALORIES.</h4>
+          <p style="font-size:13px; color:#666; line-height:1.6; margin:0;">Made with a short list you can actually read: water, hemp extract, natural flavors, and natural stevia. Nothing extra. Nothing you don't need.</p>
+        </div>
+        <div style="border-bottom:1px solid #eee; padding:20px 0;">
+          <div style="display:inline-block; background:#E8E7F0; color:#2D2B5E; padding:4px 14px; border-radius:20px; font-family:'Manrope',sans-serif; font-size:11px; font-weight:600; margin-bottom:10px;">Flavor First</div>
+          <h4 style="font-family:'Manrope',sans-serif; color:#333; font-size:18px; margin-bottom:6px;">CRISP. BRIGHT. NEVER SYRUPY.</h4>
+          <p style="font-size:13px; color:#666; line-height:1.6; margin:0;">From Blood Orange to Pink Lemonade, each flavor is designed to taste like the fruit, not sugar.</p>
+        </div>
+        <div style="padding:20px 0;">
+          <div style="display:inline-block; background:#E8E7F0; color:#2D2B5E; padding:4px 14px; border-radius:20px; font-family:'Manrope',sans-serif; font-size:11px; font-weight:600; margin-bottom:10px;">Made for Social Moments</div>
+          <h4 style="font-family:'Manrope',sans-serif; color:#333; font-size:18px; margin-bottom:6px;">SAME RITUAL. CLEANER SIP.</h4>
+          <p style="font-size:13px; color:#666; line-height:1.6; margin:0;">A refreshing, alcohol-free option for everyday occasions. Simple, balanced, and easy to enjoy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCROLLING BANNER -->
+
+  <section style="background:#A5DCE8; padding:70px 0;">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+          <h2 style="font-family:'Manrope',sans-serif; color:#2D2B5E; font-size:22px; line-height:1.2; margin-bottom:6px; font-weight:800;">Not Sure Where to Start?</h2>
+          <p style="font-size:14px; color:#2D2B5E; font-weight:600; margin-bottom:14px;">Start with a Sample Pack</p>
+          <p style="font-size:13px; color:rgba(45,43,94,0.75); line-height:1.8; margin-bottom:24px;">
+            Made for anyone 21+ looking for an alcohol-free option. Choose by strength — Light 🍃, Moderate 🍃🍃, or Experience 🍃🍃🍃 — while enjoying the variety of flavors offered. Zero Alcohol. Zero Sugar. Zero Calories. Clean ingredients. Try them all, pick your favorite, repeat.
+          </p>
+          <a href="#product-top" style="display:inline-block; background:#2D2B5E; color:#fff; padding:14px 36px; border-radius:30px; font-family:'Manrope',sans-serif; font-weight:700; font-size:14px; text-decoration:none; text-transform:uppercase; letter-spacing:1px;">SHOP THE SAMPLE PACK</a>
+      </div>
+      <div class="col-lg-5">
+        <img src="assets/images/Free Shipping.jpg" alt="Drink Delta Free Shipping" style="width:100%; border-radius:20px;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-block" id="faq-section" id="faq-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5">
+          <img src="assets/images/DEL_Iteration_Static_A3.1_Favorite_Collection PDP_Statics_C1V1_Feb_26_1x1-1.jpg" alt="Drink Delta collection" style="width:100%; border-radius:20px;">
+        </div>
+        <div class="col-lg-7">
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faqOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faqCollapseOne" aria-expanded="false" aria-controls="faqCollapseOne">
+                  What is Delta?
+                </button>
+              </h2>
+              <div id="faqCollapseOne" class="accordion-collapse collapse" aria-labelledby="faqOne"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Delta is the most-loved garden seltzer, with 100k+ fans and counting. It's alcohol-free, zero sugar, zero calories and made with a short list of clean ingredients you can actually recognize.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faqTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+                  Who is it for?
+                </button>
+              </h2>
+              <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqTwo"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Anyone 21+ who wants something fun to sip without the sugar or alcohol. Think: same social moment, just a cleaner choice. No compromises here. The kind of sip you don't have to think twice about.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faqThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
+                  What should I expect?
+                </button>
+              </h2>
+              <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqThree"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Crisp bubbles, bright flavor, and a clean finish. It tastes like the fruit, not syrup, so it's refreshing without being heavy.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faqFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faqCollapseFour" aria-expanded="false" aria-controls="faqCollapseFour">
+                  What's in it?
+                </button>
+              </h2>
+              <div id="faqCollapseFour" class="accordion-collapse collapse" aria-labelledby="faqFour"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  A short, simple list: water, hemp extract, natural flavors, citric acid, and natural stevia. No alcohol. No added sugar. Nothing extra.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- CTA BANNER -->
+<section style="padding:40px 0; background:#2D2B5E; text-align:center;">
+  <div class="container">
+    <h3 style="font-family:'ECKHARDT',sans-serif; color:#fff; font-size:22px; margin-bottom:6px;">Ready to Make the Switch?</h3>
+    <p style="color:rgba(255,255,255,0.7); font-size:13px; margin-bottom:16px;">Try the Sampler Pack and find your favorite flavor</p>
+    <a href="#product-top" style="display:inline-block; background:#fff; color:#2D2B5E; padding:12px 36px; border-radius:30px; font-family:'ECKHARDT',sans-serif; font-weight:600; font-size:14px; text-decoration:none; text-transform:uppercase; letter-spacing:1px;">Shop Now</a>
+  </div>
+</section>
+
+<!-- WHY DRINK DELTA - Redesigned -->
+<section style="padding:80px 0; background:#FFFFFF;">
+  <div class="container">
+    <h2 class="text-center mb-2" style="font-family:'Manrope',sans-serif; color:#2D2B5E; font-size:32px; font-weight:800;">How We Stack Up</h2>
+    <p class="text-center mb-5" style="font-size:14px; color:#888;">See how Delta compares to what you might be drinking now</p>
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div style="overflow-x:auto;">
+        <table style="width:100%; font-family:'Manrope',sans-serif; border-collapse:separate; border-spacing:0; min-width:600px;">
+          <thead>
+            <tr>
+              <th style="padding:20px 20px; text-align:left; font-size:14px; color:#999; width:30%; background:transparent;"></th>
+              <th style="padding:20px 16px; text-align:center; color:#2D2B5E; background:#EDF5FF; width:34%; border-radius:16px 16px 0 0; font-weight:700; font-size:16px;">DELTA</th>
+              <th style="padding:20px 16px; text-align:center; font-size:13px; color:#666; background:#f8f8f8; width:12%;">Beer &amp; Wine</th>
+              <th style="padding:20px 16px; text-align:center; font-size:13px; color:#666; background:#f4f4f4; width:12%;">Energy Drinks</th>
+              <th style="padding:20px 16px; text-align:center; font-size:13px; color:#666; background:#f0f0f0; width:12%;">Mocktails</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:16px 20px; font-size:13px; color:#333; font-weight:700; border-bottom:1px solid #eee;">Calories per serving</td>
+              <td style="padding:16px; text-align:center; font-size:14px; font-weight:700; color:#2D2B5E; background:#EDF5FF; border-bottom:1px solid #d8e8f5;">0 Calories</td>
+              <td style="padding:16px; text-align:center; font-size:13px; color:#999; background:#f8f8f8; border-bottom:1px solid #eee;">150+</td>
+              <td style="padding:16px; text-align:center; font-size:13px; color:#999; background:#f4f4f4; border-bottom:1px solid #eee;">110+</td>
+              <td style="padding:16px; text-align:center; font-size:13px; color:#999; background:#f0f0f0; border-bottom:1px solid #eee;">60-120</td>
+            </tr>
+            <tr>
+              <td style="padding:16px 20px; font-size:13px; color:#333; font-weight:700; border-bottom:1px solid #eee;">Added sugar</td>
+              <td style="padding:16px; text-align:center; font-size:14px; font-weight:700; color:#2D2B5E; background:#EDF5FF; border-bottom:1px solid #d8e8f5;">0 Sugar</td>
+              <td style="padding:16px; text-align:center; font-size:13px; color:#999; background:#f8f8f8; border-bottom:1px solid #eee;">10-15g</td>
+              <td style="padding:16px; text-align:center; font-size:13px; color:#999; background:#f4f4f4; border-bottom:1px solid #eee;">25-40g</td>
+              <td style="padding:16px; text-align:center; font-size:13px; color:#999; background:#f0f0f0; border-bottom:1px solid #eee;">15-30g</td>
+            </tr>
+            <tr>
+              <td style="padding:16px 20px; font-size:13px; color:#333; font-weight:700; border-bottom:1px solid #eee;">Hangover / crash</td>
+              <td style="padding:16px; text-align:center; font-size:14px; font-weight:700; color:#2D2B5E; background:#EDF5FF; border-bottom:1px solid #d8e8f5;">None</td>
+              <td style="padding:16px; text-align:center; font-size:13px; color:#999; background:#f8f8f8; border-bottom:1px solid #eee;">Hangover</td>
+              <td style="padding:16px; text-align:center; font-size:13px; color:#999; background:#f4f4f4; border-bottom:1px solid #eee;">Crash</td>
+              <td style="padding:16px; text-align:center; font-size:13px; color:#999; background:#f0f0f0; border-bottom:1px solid #eee;">None</td>
+            </tr>
+            <tr>
+              <td style="padding:16px 20px; font-size:13px; color:#333; font-weight:700;">Feel the difference</td>
+              <td style="padding:16px; text-align:center; font-size:18px; color:#2D2B5E; background:#EDF5FF; border-radius:0 0 16px 0;">&#10003;</td>
+              <td style="padding:16px; text-align:center; font-size:18px; color:#999; background:#f8f8f8;">&#10003;</td>
+              <td style="padding:16px; text-align:center; font-size:18px; color:#ccc; background:#f4f4f4;">&#10007;</td>
+              <td style="padding:16px; text-align:center; font-size:18px; color:#ccc; background:#f0f0f0;">&#10007;</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+        <div class="text-center mt-5">
+          <a href="#product-top" style="display:inline-block; background:#2D2B5E; color:#fff; padding:14px 44px; border-radius:30px; font-family:'Manrope',sans-serif; font-weight:600; font-size:15px; text-decoration:none; text-transform:uppercase; letter-spacing:1px;">Shop Now</a>
+          <div class="d-flex justify-content-center gap-4 mt-3" style="font-family:'Manrope',sans-serif; font-size:12px; color:#999;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BORN FROM PURPOSE -->
+<section style="padding:70px 0; background:#fff;">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5 order-lg-2">
+        <img src="assets/images/JackSherrie_FounderCEO_Delta.jpg" alt="Jack, CEO & Founder of Delta" style="width:100%; max-height:500px; object-fit:cover; border-radius:20px;">
+      </div>
+      <div class="col-lg-7 order-lg-1">
+        <div style="display:inline-block; background:#E8E7F0; color:#2D2B5E; padding:4px 14px; border-radius:20px; font-family:'Manrope',sans-serif; font-size:11px; font-weight:600; margin-bottom:16px;">Our Mission</div>
+        <h2 style="font-family:'Manrope',sans-serif; color:#333; font-size:28px; margin-bottom:16px; font-weight:800;">Born From Purpose</h2>
+        <p style="font-size:14px; color:#555; line-height:1.8;">I built Delta because I wanted a drink that felt better in my body and didn't wreck the next day. Delta is just a clean, predictable drink you can enjoy without overthinking it. That's always been the idea.</p>
+        <p style="font-size:14px; color:#555; line-height:1.8; font-style:italic;">— Jack<br>CEO &amp; Founder of Delta</p>
+        <a href="#product-top" style="display:inline-block; margin-top:20px; background:#2D2B5E; color:#fff; padding:12px 32px; border-radius:30px; font-family:'Manrope',sans-serif; font-weight:700; font-size:13px; text-decoration:none; text-transform:uppercase; letter-spacing:1px;">TRY IT TODAY</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section style="padding:50px 0; background:#2D2B5E; text-align:center;">
+  <div class="container">
+    <h3 style="font-family:'Manrope',sans-serif; color:#fff; font-size:24px; margin-bottom:6px;">Cheers to Tomorrow</h3>
+    <p style="color:rgba(255,255,255,0.7); font-size:13px; margin-bottom:24px;">Clean ingredients. Easy to enjoy.</p>
+    <div class="d-flex justify-content-center gap-5 mb-4" style="flex-wrap:wrap;">
+      <div class="text-center">
+        <img src="assets/images/icons/sugar-free.svg" alt="No Sugar" style="width:48px; height:48px; margin-bottom:8px;">
+        <div style="font-family:'Manrope',sans-serif; font-size:11px; color:rgba(255,255,255,0.8); font-weight:600;">No Sugar</div>
+      </div>
+      <div class="text-center">
+        <img src="assets/images/icons/gluten-free.svg" alt="Gluten Free" style="width:48px; height:48px; margin-bottom:8px;">
+        <div style="font-family:'Manrope',sans-serif; font-size:11px; color:rgba(255,255,255,0.8); font-weight:600;">Gluten Free</div>
+      </div>
+      <div class="text-center">
+        <img src="assets/images/icons/alcohol-free.svg" alt="No Alcohol" style="width:48px; height:48px; margin-bottom:8px;">
+        <div style="font-family:'Manrope',sans-serif; font-size:11px; color:rgba(255,255,255,0.8); font-weight:600;">No Alcohol</div>
+      </div>
+      <div class="text-center">
+        <img src="assets/images/icons/no-fire-allowed.svg" alt="No Calories" style="width:48px; height:48px; margin-bottom:8px;">
+        <div style="font-family:'Manrope',sans-serif; font-size:11px; color:rgba(255,255,255,0.8); font-weight:600;">No Calories</div>
+      </div>
+    </div>
+    <a href="#product-top" style="display:inline-block; background:#fff; color:#2D2B5E; padding:14px 44px; border-radius:30px; font-family:'Manrope',sans-serif; font-weight:700; font-size:15px; text-decoration:none; text-transform:uppercase; letter-spacing:1px;">Shop the Sample Pack</a>
+  </div>
+</section>
+
+<div id="reviews-section"></div>
+<!-- SCROLLING REVIEWS -->
+<section style="padding:60px 0; background:#F5F0E8; overflow:hidden;" id="reviews-scroll-section">
+  <div class="container">
+    <h2 class="text-center clr-green mb-2" style="font-family:'Manrope',sans-serif; font-weight:800;">What People Are Saying</h2>
+    <p class="text-center text-muted mb-4" style="font-family:'Manrope',sans-serif; font-size:14px;">4.88 stars from 12,472+ verified reviews</p>
+  </div>
+  <style>
+    .reviews-track { display:flex; gap:16px; animation: scrollReviews 60s linear infinite; width: max-content; }
+    .reviews-track:hover { animation-play-state: paused; }
+    .review-card-scroll { background:#fff; border-radius:14px; padding:22px; min-width:300px; max-width:300px; flex-shrink:0; }
+    .review-card-scroll .stars { color:#FFC107; font-size:16px; margin-bottom:6px; }
+    .review-card-scroll p { font-family:'Manrope',sans-serif; font-size:12px; color:#333; line-height:1.5; margin-bottom:8px; }
+    .review-card-scroll .reviewer { font-family:'Manrope',sans-serif; font-weight:700; color:#2D2B5E; font-size:11px; }
+    .review-card-scroll .badge-v { font-family:'Manrope',sans-serif; font-size:10px; color:#666; display:flex; align-items:center; gap:4px; margin-top:4px; }
+    .review-card-scroll .badge-v img { width:16px; height:16px; }
+    @keyframes scrollReviews { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+    .reviews-row-2 { margin-top:16px; }
+    .reviews-row-2 .reviews-track { animation-direction: reverse; }
+  </style>
+  <div style="overflow:hidden;">
+    <div class="reviews-track">
+      <div class="review-card-scroll"><div class="stars">★★★★★</div><p>Very impressed with Delta seltzer. The flavor is excellent, not overpowering, just the right taste. I purchased a variety pack as well as the twelve pack of Pink Lemonade. The Blood Orange is superb. The Blueberry is also very good. Thank you Delta.</p><div class="reviewer">GARY CALHOUN</div><div class="badge-v"><img src="assets/images/verfied.svg"> VERIFIED BUYER</div></div>
+      <div class="review-card-scroll"><div class="stars">★★★★★</div><p>Started out as an alternative to dry January and still at it in April. Great change of pace!</p><div class="reviewer">MARY K</div><div class="badge-v"><img src="assets/images/verfied.svg"> VERIFIED BUYER</div></div>
+      <div class="review-card-scroll"><div class="stars">★★★★★</div><p>Always a quick delivery. Great tasting product.</p><div class="reviewer">ALAN SPINA</div><div class="badge-v"><img src="assets/images/verfied.svg"> VERIFIED BUYER</div></div>
+      <div class="review-card-scroll"><div class="stars">★★★★★</div><p>Really great to relax and unwind in the afternoon. Just the right amount. 10/10</p><div class="reviewer">EMMA STEVENSON</div><div class="badge-v"><img src="assets/images/verfied.svg"> VERIFIED BUYER</div></div>
+      <div class="review-card-scroll"><div class="stars">★★★★★</div><p>Highly recommend to anyone! I've been getting shipments every month for a while now and I haven't been let down! If there's issues Delta goes above and beyond to help.</p><div class="reviewer">DESTINY O</div><div class="badge-v"><img src="assets/images/verfied.svg"> VERIFIED BUYER</div></div>
+      <div class="review-card-scroll"><div class="stars">★★★★★</div><p>I've tried 5 or 6 different brands but this one is the best. Taste, experience, no calories, no sugar, good price.</p><div class="reviewer">STAN FARMER</div><div class="badge-v"><img src="assets/images/verfied.svg"> VERIFIED BUYER</div></div>
+      <div class="review-card-scroll"><div class="stars">★★★★★</div><p>These are great!! I sip on one every day!! Love these!!</p><div class="reviewer">PAULA FRASER</div><div class="badge-v"><img src="assets/images/verfied.svg"> VERIFIED BUYER</div></div>
+      <div class="review-card-scroll"><div class="stars">★★★★★</div><p>Great taste. All the flavors are great! Blueberry Açaí is my favorite. No sugar and no calories — can't go wrong.</p><div class="reviewer">SUZIE BATTLES</div><div class="badge-v"><img src="assets/images/verfied.svg"> VERIFIED BUYER</div></div>
+      <div class="review-card-scroll"><div class="stars">★★★★★</div><p>Happy customer here. Monthly delivery never disappoints.</p><div class="reviewer">ANDREA GAMLIN</div><div class="badge-v"><img src="assets/images/verfied.svg"> VERIFIED BUYER</div></div>
+      <div class="review-card-scroll"><div class="stars">★★★★★</div><p>Obsessed. We get an order monthly and sometimes I buy extra because I just love these so much. I've told all my friends and they love them too.</p><div class="reviewer">KRISTEN</div><div class="badge-v"><img src="assets/images/verfied.svg"> VERIFIED BUYER</div></div>
+<!-- DUPLICATE SET FOR SEAMLESS LOOP -->
+      <div class="review-card-scroll"><div class="stars">★★★★★</div><p>Very impressed with Delta seltzer. The flavor is excellent, not overpowering, just the right taste. I purchased a variety pack as well as the twelve pack of Pink Lemonade. The Blood Orange is superb. The Blueberry is also very good. Thank you Delta.</p><div class="reviewer">GARY CALHOUN</div><div class="badge-v"><img src="assets/images/verfied.svg"> VERIFIED BUYER</div></div>
+      <div class="review-card-scroll"><div class="stars">★★★★★</div><p>Started out as an alternative to dry January and still at it in April. Great change of pace!</p><div class="reviewer">MARY K</div><div class="badge-v"><img src="assets/images/verfied.svg"> VERIFIED BUYER</div></div>
+      <div class="review-card-scroll"><div class="stars">★★★★★</div><p>Always a quick delivery. Great tasting product.</p><div class="reviewer">ALAN SPINA</div><div class="badge-v"><img src="assets/images/verfied.svg"> VERIFIED BUYER</div></div>
+      <div class="review-card-scroll"><div class="stars">★★★★★</div><p>Really great to relax and unwind in the afternoon. Just the right amount. 10/10</p><div class="reviewer">EMMA STEVENSON</div><div class="badge-v"><img src="assets/images/verfied.svg"> VERIFIED BUYER</div></div>
+      <div class="review-card-scroll"><div class="stars">★★★★★</div><p>Highly recommend to anyone! I've been getting shipments every month for a while now and I haven't been let down! If there's issues Delta goes above and beyond to help.</p><div class="reviewer">DESTINY O</div><div class="badge-v"><img src="assets/images/verfied.svg"> VERIFIED BUYER</div></div>
+      <div class="review-card-scroll"><div class="stars">★★★★★</div><p>I've tried 5 or 6 different brands but this one is the best. Taste, experience, no calories, no sugar, good price.</p><div class="reviewer">STAN FARMER</div><div class="badge-v"><img src="assets/images/verfied.svg"> VERIFIED BUYER</div></div>
+      <div class="review-card-scroll"><div class="stars">★★★★★</div><p>These are great!! I sip on one every day!! Love these!!</p><div class="reviewer">PAULA FRASER</div><div class="badge-v"><img src="assets/images/verfied.svg"> VERIFIED BUYER</div></div>
+      <div class="review-card-scroll"><div class="stars">★★★★★</div><p>Great taste. All the flavors are great! Blueberry Açaí is my favorite. No sugar and no calories — can't go wrong.</p><div class="reviewer">SUZIE BATTLES</div><div class="badge-v"><img src="assets/images/verfied.svg"> VERIFIED BUYER</div></div>
+      <div class="review-card-scroll"><div class="stars">★★★★★</div><p>Happy customer here. Monthly delivery never disappoints.</p><div class="reviewer">ANDREA GAMLIN</div><div class="badge-v"><img src="assets/images/verfied.svg"> VERIFIED BUYER</div></div>
+      <div class="review-card-scroll"><div class="stars">★★★★★</div><p>Obsessed. We get an order monthly and sometimes I buy extra because I just love these so much. I've told all my friends and they love them too.</p><div class="reviewer">KRISTEN</div><div class="badge-v"><img src="assets/images/verfied.svg"> VERIFIED BUYER</div></div>
+    </div>
+  </div>
+</section>
+
+  <script src="assets/js/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <!-- Junip removed --></script>
+
+  <!-- Stay AI Subscription Widget -->
+  <script>
+    window.StayAiConfig = {
+      apiToken: 'wnz46gq-ohgumla-v73w4di-fgc5cvq',
+      shop: 'bfac5a-e3.myshopify.com'
+    };
+  </script>
+  <script src="https://cdn.stay-ai.com/widget/stay-widget.js" defer></script>
+
+  <script src="assets/js/custom.js"></script>
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title text-uppercase fw-semibold clr-green" id="cartOffcanvasLabel">Your Cart</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column gap-4">
+      <div class="mini-cart-items">
+        <div class="d-flex gap-3">
+          <img src="assets/images/media-one.webp" alt="Cart item" class="rounded-3" width="88" height="88">
+          <div class="flex-grow-1">
+            <div class="fw-semibold clr-green">Watermelon Hibiscus</div>
+            <div class="text-muted small">24-Pack</div>
+            <div class="d-flex align-items-center justify-content-between mt-2">
+              <div class="input-group input-group-sm" style="width: 120px;">
+                <button class="btn btn-outline-secondary minus" type="button">-</button>
+                <input type="text" class="form-control text-center" value="1" aria-label="Quantity">
+                <button class="btn btn-outline-secondary plus" type="button">+</button>
+              </div>
+              <div class="fw-semibold clr-green">$59.00</div>
+            </div>
+            <button class="btn btn-link p-0 mt-2 small text-decoration-none">Remove</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between border-top pt-3">
+        <span class="fw-semibold clr-green">Subtotal</span>
+        <span class="fw-semibold clr-green">$59.00</span>
+      </div>
+      <p class="text-muted small mb-0">Shipping &amp; taxes calculated at checkout</p>
+
+      <div class="mt-auto">
+
+        <!-- <button class="btn-primary w-100 checkout">Checkout</button> -->
+        <a href="#" class="btn-primary w-100 checkout">Checkout</a>
+        <button class="btn btn-link w-100 mt-2 text-decoration-none" type="button" data-bs-dismiss="offcanvas">Continue
+          Shopping</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Junip removed --></script>
+
+<!-- FOOTER -->
+<footer style="background:#333; padding:40px 0 0;">
+  <div class="container text-center">
+    <img src="assets/images/Primary_Logo_Color-DO8Uri6Y.svg" style="height:30px; filter:brightness(10); margin-bottom:16px;">
+    <p style="color:rgba(255,255,255,0.5); font-size:11px; line-height:1.8; max-width:500px; margin:0 auto;">
+      Most loved garden seltzer. Zero alcohol. Zero calories. Zero sugar.<br><br>
+      Must be 21+ to purchase. Please drink responsibly.
+    </p>
+    <div style="margin-top:16px; font-family:'ECKHARDT',sans-serif; font-size:11px; color:rgba(255,255,255,0.3);">
+      &copy; 2026 Drink Delta. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+</body>
+
+</html>
